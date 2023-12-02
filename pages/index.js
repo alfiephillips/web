@@ -47,7 +47,7 @@ const HomePage = () => {
         developing tailored solutions to meet diverse client needs. My expertise extends to <Highlight bgColor="yellow" weight="700">Search Engine
         Optimization (SEO) and brand promotion</Highlight>, where I have a proven track record of
         enhancing brand visibility for small business startups. I thrive on <Highlight bgColor="red" color="yellow" weight="600">technical challenges</Highlight> and excel at&nbsp;
-        <Highlight bgColor="blue" color="white" weight="800">problem-solving</Highlight> to deliver effective solutions that align with clients' objectives.
+        <Highlight bgColor="blue" color="white" weight="800">problem-solving</Highlight> to deliver effective solutions that align with clients&apos; objectives.
       </Description>
       {/* <ImageGrid>
         <Image src="/path-to-your-image.jpg" alt="Image Description" />
