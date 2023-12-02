@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next",
+  "rules": {
+    // Add or override ESLint rules here
+    "indent": ["error", 2],
+    "no-unused-vars": "warn"
+    // More custom rules can be added as needed
+  }
 }
