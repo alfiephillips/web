@@ -1,24 +1,23 @@
 import {
   PageContainer, Navbar, NavLink, 
-  Title, Description, ImageGrid, 
-  Image, FooterText, SocialButton} 
-  from '../components';
+  Title, Description, FooterText, SocialButton} 
+  from "../components";
 
 import React, {useState, useEffect} from "react"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faSquareLetterboxd } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub, faSquareLetterboxd } from "@fortawesome/free-brands-svg-icons";
 
 const TimeDisplay = () => {
-  const [currentTime, setCurrentTime] = useState('');
+  const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
     const updateCurrentTime = () => {
       const now = new Date();
       const hours = now.getHours();
       const minutes = now.getMinutes();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      const formattedTime = `${hours % 12 || 12}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+      const ampm = hours >= 12 ? "PM" : "AM";
+      const formattedTime = `${hours % 12 || 12}:${minutes < 10 ? "0" : ""}${minutes} ${ampm}`;
       setCurrentTime(formattedTime);
     };
 
@@ -48,7 +47,7 @@ const HomePage = () => {
 developing tailored solutions to meet diverse client needs. My expertise extends to Search Engine
 Optimization (SEO) and brand promotion, where I have a proven track record of significantly boosting sales
 and enhancing brand visibility for small business startups. I thrive on technical challenges and excel at
-problem-solving to deliver effective solutions that align with clients' objectives.
+problem-solving to deliver effective solutions that align with clients&apos; objectives.
       </Description>
       {/* <ImageGrid>
         <Image src="/path-to-your-image.jpg" alt="Image Description" />
@@ -58,19 +57,19 @@ problem-solving to deliver effective solutions that align with clients' objectiv
         <Image src="/path-to-your-image.jpg" alt="Image Description" />
         <Image src="/path-to-your-image.jpg" alt="Image Description" />
       </ImageGrid> */}
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <SocialButton href="https://www.linkedin.com/in/alfiephillips/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" size="2x"/>
         </SocialButton>
         <span>LinkedIn</span>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <SocialButton href="https://github.com/alfiephillips" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} className="github-icon" size="2x"/>
         </SocialButton>
         <span>GitHub</span>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <SocialButton href="/CV-Alfie-Phillips.pdf" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faSquareLetterboxd} size="2x"/>
         </SocialButton>
