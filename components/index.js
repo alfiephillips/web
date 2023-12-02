@@ -1,4 +1,35 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+const glitch = keyframes`
+  0% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+    transform: translate(2px, 0);
+  }
+  20% {
+    text-shadow: -2px 0 blue, 2px 0 red;
+    transform: translate(-2px, 0);
+  }
+  40% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+    transform: translate(2px, -2px);
+  }
+  60% {
+    text-shadow: -2px 0 blue, 2px 0 red;
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+    transform: translate(2px, 0);
+  }
+  100% {
+    text-shadow: -2px 0 blue, 2px 0 red;
+    transform: translate(-2px, 0);
+  }
+`;
+
+const TimeWrapper = styled.span`
+  animation: ${glitch} 1s infinite;
+`
 
 const PageContainer = styled.div`
   background-color: black;
@@ -106,4 +137,4 @@ const SocialButton = styled.a`
 
 
 
-export {PageContainer, Navbar, NavLink, Title, Highlight, Description, ImageGrid, Image, FooterText, SocialButton}
+export {PageContainer, TimeWrapper, Navbar, NavLink, Title, Highlight, Description, ImageGrid, Image, FooterText, SocialButton}
