@@ -39,9 +39,20 @@ const Title = styled.h1`
   font-size: 2.5em;
 `;
 
+const Highlight = styled.span`
+  background-color: ${props => props.bgColor || 'white'};
+  color: ${props => props.color || 'black'};
+  font-weight: ${props => props.weight || 500};
+`;
+
 const Description = styled.p`
   color: grey;
   margin-bottom: 20px;
+
+  .highlight {
+    background-color: whitesmoke;
+    color: black;
+  }
 `;
 
 const ImageGrid = styled.div`
@@ -95,4 +106,4 @@ const SocialButton = styled.a`
 
 
 
-export {PageContainer, Navbar, NavLink, Title, Description, ImageGrid, Image, FooterText, SocialButton}
+export {PageContainer, Navbar, NavLink, Title, Highlight, Description, ImageGrid, Image, FooterText, SocialButton}

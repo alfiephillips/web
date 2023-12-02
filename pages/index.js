@@ -1,6 +1,6 @@
 import {
   PageContainer, Navbar, NavLink, 
-  Title, Description, FooterText, SocialButton} 
+  Title, Highlight, Description, FooterText, SocialButton} 
   from "../components";
 
 import React, {useState, useEffect} from "react"
@@ -43,11 +43,11 @@ const HomePage = () => {
       <h3><u>Back-End Software Engineer</u></h3>
       <TimeDisplay /> 
       <Description>
-      As a highly motivated and self-taught Software Engineer with over 3 years of experience, I specialize in
-developing tailored solutions to meet diverse client needs. My expertise extends to Search Engine
-Optimization (SEO) and brand promotion, where I have a proven track record of significantly boosting sales
-and enhancing brand visibility for small business startups. I thrive on technical challenges and excel at
-problem-solving to deliver effective solutions that align with clients&apos; objectives.
+        As a <Highlight bgColor="green" color="aqua" weight="1000">highly motivated</Highlight> and <Highlight color="red" weight="900">self-taught Software Engineer</Highlight> with over 3 years of experience, I specialize in
+        developing tailored solutions to meet diverse client needs. My expertise extends to <Highlight bgColor="yellow" weight="700">Search Engine
+        Optimization (SEO) and brand promotion</Highlight>, where I have a proven track record of significantly boosting sales
+        and enhancing brand visibility for small business startups. I thrive on <Highlight bgColor="red" color="yellow" weight="600">technical challenges</Highlight> and excel at
+        <Highlight bgColor="blue" color="white" weight="800">problem-solving</Highlight> to deliver effective solutions that align with clients' objectives.
       </Description>
       {/* <ImageGrid>
         <Image src="/path-to-your-image.jpg" alt="Image Description" />
