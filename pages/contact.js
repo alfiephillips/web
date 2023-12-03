@@ -1,6 +1,6 @@
 import {
   PageContainer, Navbar, NavLink, 
-  Title} 
+  Title, Description} 
   from "../components";
 
 import React from "react"
