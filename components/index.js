@@ -55,7 +55,7 @@ const Navbar = styled.nav`
 `;
 
 const NavLink = styled.a`
-  color: white;
+  color: ${props => props.$activeColor || 'white'};
   text-decoration: none;
   font-size: 1em;
 
@@ -71,9 +71,9 @@ const Title = styled.h1`
 `;
 
 const Highlight = styled.span`
-  background-color: ${props => props.bgColor || 'white'};
-  color: ${props => props.color || 'black'};
-  font-weight: ${props => props.weight || 500};
+  background-color: ${props => props.$bgcolor || 'white'};
+  color: ${props => props.$color || 'black'};
+  font-weight: ${props => props.$weight || 500};
 `;
 
 const Description = styled.p`
