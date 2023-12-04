@@ -36,7 +36,7 @@ const HomePage = () => {
         <NavLink href="/work">work</NavLink>
         <NavLink href="/contact">contact</NavLink>
       </Navbar>
-      <Title>hi, i&apos;m alfie 👋</Title>
+      <Title>alfie phillips 👋</Title>
       <h3><u>software engineer</u></h3>
       <TimeWrapper><TimeDisplay /> </TimeWrapper>
       <Description>
@@ -60,7 +60,7 @@ const HomePage = () => {
         </SocialButton>
         <span>linkedIn</span>
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", algnItems: "center" }}>
         <SocialButton href="https://github.com/alfiephillips" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} className="github-icon" size="2x"/>
         </SocialButton>
