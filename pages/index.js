@@ -37,19 +37,19 @@ const HomePage = () => {
         <SocialButton href="https://www.linkedin.com/in/alfiephillips/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" size="2x"/>
         </SocialButton>
-        <span>linkedIn</span>
+        <span style={{fontSize: "1.5em"}}>linkedIn</span>
       </div>
-      <div style={{ display: "flex", algnItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <SocialButton href="https://github.com/alfiephillips" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} className="github-icon" size="2x"/>
         </SocialButton>
-        <span>gitHub</span>
+        <span style={{fontSize: "1.5em"}}>gitHub</span>
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <SocialButton href="/CV-Alfie-Phillips.pdf" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faSquareLetterboxd} size="2x"/>
+          <FontAwesomeIcon icon={faSquareLetterboxd} className="cv-icon" size="2x"/>
         </SocialButton>
-        <span>resume</span>
+        <span style={{fontSize: "1.5em"}}>resume</span>
       </div>
       <FooterText>
         © copyright alfie phillips {new Date().getFullYear()}
