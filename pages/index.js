@@ -8,26 +8,6 @@ import React, {useState, useEffect} from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub, faSquareLetterboxd } from "@fortawesome/free-brands-svg-icons";
 
-const TimeDisplay = () => {
-  const [currentTime, setCurrentTime] = useState("");
-
-  useEffect(() => {
-    const updateCurrentTime = () => {
-      const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      const formattedTime = `${hours % 12 || 12}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
-      setCurrentTime(formattedTime);
-    };
-
-    const intervalId = setInterval(updateCurrentTime, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
-
-  return <span>{currentTime}</span>;
-};
-
 const HomePage = () => {
   return (
     <PageContainer>
@@ -38,7 +18,6 @@ const HomePage = () => {
       </Navbar>
       <Title>alfie phillips 👋</Title>
       <h3><u>software engineer</u></h3>
-      <TimeWrapper><TimeDisplay /> </TimeWrapper>
       <Description>
         As a <Highlight $bgcolor="green" $color="aqua" $weight="1000">well motivated</Highlight> and <Highlight $color="red" $weight="900">self-taught Software Engineer</Highlight> close to 4 years of experience, I specialize in
         developing tailored solutions to meet diverse client needs. My expertise extends to <Highlight $bgcolor="yellow" $weight="700">Search Engine
