@@ -1,10 +1,5 @@
-@font-face {
-  font-family: MainFont;
-  src: url(font-one.ttf)
-}
-
 body {
-  font-family: MainFont;
+  font-family: monospace;
   padding: 0;
   margin: 0;
 }

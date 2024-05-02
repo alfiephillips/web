@@ -14,7 +14,7 @@ const WorkPage = () => {
         <NavLink href="/contact">contact</NavLink>
       </Navbar>
       <Title>my work 💻</Title>
-      <Description>working on this page...</Description>
+      
     </PageContainer>
   )
 }
