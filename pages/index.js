@@ -43,7 +43,7 @@ const HomePage = () => {
         <SocialButton href="https://github.com/alfiephillips" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} className="github-icon" size="2x"/>
         </SocialButton>
-        <span style={{fontSize: "1.5em"}}>gitHub</span>
+        <span style={{fontSize: "1.5em"}}>github</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <SocialButton href="/CV-Alfie-Phillips.pdf" target="_blank" rel="noopener noreferrer">
