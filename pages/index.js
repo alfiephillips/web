@@ -17,7 +17,7 @@ const HomePage = () => {
         <NavLink href="/contact">contact</NavLink>
       </Navbar>
       <Title>alfie phillips 👋</Title>
-      <h3><u>apprentice dev at hiyield ✳️</u></h3>
+      <h3><u>apprentice developer at hiyield</u>&nbsp;✳️</h3>
       <Description>
         As a <Highlight $bgcolor="green" $color="aqua" $weight="1000">well motivated</Highlight> and <Highlight $color="red" $weight="900">self-taught Software Engineer</Highlight> close to 4 years of experience, I specialize in
         developing tailored solutions to meet diverse client needs. My expertise extends to <Highlight $bgcolor="yellow" $weight="700">Search Engine
