@@ -32,7 +32,7 @@ const TimeWrapper = styled.span`
 `;
 
 const PageContainer = styled.div`
-  background-color: black;
+  background-color: #232b2b;
   color: white;
   min-height: 100vh;
   padding: 30px 25%; // Default padding for larger screens
@@ -85,6 +85,11 @@ const Description = styled.p`
   }
 `;
 
+const ErrorText = styled.p`
+  color: red;
+  font-weight: 800;
+`
+
 const ImageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -120,9 +125,6 @@ const SocialButton = styled.a`
     transform: scale(1.1); // Slight zoom effect on hover
   }
 
-  @media (max-width: 768px) {
-  }
-
   // LinkedIn Icon Color
   .linkedin-icon {
     color: #0077b5;
@@ -149,6 +151,39 @@ const Projects = styled.div`
   }
 `;
 
+const ProjectItem = styled.div`
+  border: 2px solid #d8e4e9;
+  padding: 1.5em 1em;
+  border-radius: 1em;
+`;
+
+const ProjectDescription = styled.p`
+  color: grey;
+  font-weight: 900;
+  margin-bottom: 10px;
+
+  border: 2px solid cyan;
+  border-radius: 1em;
+  padding: 1em;
+`
+
+const ProjectLink = styled.a`
+  font-size: 1.2em;
+  color: #0070f3;
+  text-decoration: none;
+`;
+
+const ProjectName = styled.h2`
+  color: white;
+  text-decoration: none;
+`;
+
+const ProjectStats = styled.p`
+  color: white;
+  margin-top: 2em;
+  font-size: 0.8em;
+`
+
 export {
   PageContainer,
   TimeWrapper,
@@ -157,9 +192,15 @@ export {
   Title,
   Highlight,
   Description,
+  ErrorText,
   ImageGrid,
   Image,
   FooterText,
   SocialButton,
-  Projects
+  Projects,
+  ProjectDescription,
+  ProjectItem,
+  ProjectLink,
+  ProjectName,
+  ProjectStats
 };

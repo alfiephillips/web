@@ -4,22 +4,31 @@ import {
   NavLink,
   Title,
   Description,
+  ErrorText,
   Projects,
+  ProjectDescription,
+  ProjectItem,
+  ProjectLink,
+  ProjectName,
+  ProjectStats
 } from "../components";
 
 import { useEffect, useState } from "react";
 
+import axios from "axios";
+
 const WorkPage = () => {
-  const [portfolio, setPortfolio] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [repos, setRepos] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/alfiephillips/repos")
-      .then((res) => res.json())
-      .then((data) => {
-        setPortfolio(data);
-        console.log(data);
-      });
+    const getRepos = async () => {
+      const response = await axios.get("/api/repos");
+      setRepos(response.data.repos);
+      setError(response.data.error);
+    };
+
+    getRepos();
   }, []);
 
   return (
@@ -32,17 +41,26 @@ const WorkPage = () => {
         <NavLink href="/contact">contact</NavLink>
       </Navbar>
       <Title>my work 💻</Title>
-      <Description>This page is currently in development!</Description>
-      <Projects>
-        {portfolio.map((repo, index) => {
-          return (
-            <div key={index}>
-              <Title>{repo.name}</Title>
-              <Description>{repo.description}</Description>
-            </div> 
-          )
-        })}
-      </Projects>
+      <Description>Check out my work that I've recently been involved in. This is also on my <b>GitHub</b></Description>
+      {error ? (
+        <ErrorText>{error}</ErrorText>
+      ) : (
+        <Projects>
+          {repos.length > 0 ? (
+            repos.map((repo) => (
+              <ProjectLink key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                <ProjectItem>
+                  <ProjectName>{repo.name}</ProjectName>
+                  <ProjectDescription>{repo.description ? repo.description : ("No description yet.")}</ProjectDescription>
+                  <ProjectStats>Stars ⭐ {repo.stargazers_count} | Forks 🍴 {repo.forks_count} | 🛠️ {repo.language ? repo.language : "MarkDown"}<br />⏰ Last updated: {new Date(repo.updated_at).toLocaleDateString()}</ProjectStats>
+                </ProjectItem>
+              </ProjectLink>
+            ))
+          ) : (
+            <ErrorText>No repositories found.</ErrorText>
+          )}
+        </Projects>
+      )}
     </PageContainer>
   );
 };
