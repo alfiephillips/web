@@ -45,12 +45,6 @@ const HomePage = () => {
         </SocialButton>
         <span style={{fontSize: "1.5em"}}>github</span>
       </div>
-      <div style={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <SocialButton href="/CV-Alfie-Phillips.pdf" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faSquareLetterboxd} className="cv-icon" size="2x"/>
-        </SocialButton>
-        <span style={{fontSize: "1.5em"}}>resume</span>
-      </div>
       <FooterText>
         © copyright alfie phillips {new Date().getFullYear()}
       </FooterText>
