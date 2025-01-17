@@ -31,7 +31,7 @@ const HomePage = () => {
         <u style={{textUnderlineOffset: "4px"}}>apprentice developer at hiyield</u>
       </h3>
       <Description>
-        Hello! I'm a self-taught Software Engineer with 5 years of
+        Hello! I&apos;m a self-taught Software Engineer with 5 years of
         experience, focusing on web development, SEO, and brand promotion. I
         thrive on solving technical challenges and delivering impactful, modern
         solutions for clients across various industries.
