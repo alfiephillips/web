@@ -1,51 +1,27 @@
 import styled, { keyframes } from "styled-components";
 
 const glitch = keyframes`
-  0% {
-    text-shadow: 2px 0 red, -2px 0 blue;
-    transform: translate(2px, 0);
-  }
-  20% {
-    text-shadow: -2px 0 blue, 2px 0 red;
-    transform: translate(-2px, 0);
-  }
-  40% {
-    text-shadow: 2px 0 red, -2px 0 blue;
-    transform: translate(2px, -2px);
-  }
-  60% {
-    text-shadow: -2px 0 blue, 2px 0 red;
-    transform: translate(-2px, 2px);
-  }
-  80% {
-    text-shadow: 2px 0 red, -2px 0 blue;
-    transform: translate(2px, 0);
-  }
-  100% {
-    text-shadow: -2px 0 blue, 2px 0 red;
-    transform: translate(-2px, 0);
-  }
+  0% { text-shadow: 2px 0 #ff4d4d, -2px 0 #4d94ff; }
+  20% { text-shadow: -2px 0 #4d94ff, 2px 0 #ff4d4d; }
+  40% { text-shadow: 2px 0 #ff4d4d, -2px 0 #4d94ff; }
+  60% { text-shadow: -2px 0 #4d94ff, 2px 0 #ff4d4d; }
+  80% { text-shadow: 2px 0 #ff4d4d, -2px 0 #4d94ff; }
+  100% { text-shadow: -2px 0 #4d94ff, 2px 0 #ff4d4d; }
 `;
 
-const TimeWrapper = styled.span`
-  animation: ${glitch} 1s infinite;
-`;
-
-const PageContainer = styled.div`
-  background-color: #232b2b;
-  color: white;
+export const PageContainer = styled.div`
+  background-color: #1a1a1a;
+  color: #f0f0f0;
   min-height: 100vh;
-  padding: 30px 25%; // Default padding for larger screens
+  padding: 30px 25%;
 
-  // Media query for mobile devices
   @media (max-width: 768px) {
-    padding: 30px 10%; // Reduced horizontal padding for smaller screens
+    padding: 30px 10%;
   }
 `;
 
-const Navbar = styled.nav`
+export const Navbar = styled.nav`
   display: flex;
-  justify-content: flex-start;
   gap: 20px;
   margin-bottom: 10px;
 
@@ -54,94 +30,70 @@ const Navbar = styled.nav`
   }
 `;
 
-const NavLink = styled.a`
-  color: ${(props) => props.$activeColor || "white"};
+export const NavLink = styled.a`
+  color: ${(props) => props.$activeColor || "#f0f0f0"};
   text-decoration: none;
-  font-size: 1.5em;
-
-  @media (max-width: 768px) {
-    font-size: 1.2em;
-  }
-`;
-
-const Title = styled.h1`
-  font-weight: bold;
-  font-size: 2.5em;
-`;
-
-const Highlight = styled.span`
-  background-color: ${(props) => props.$bgcolor || "white"};
-  color: ${(props) => props.$color || "black"};
-  font-weight: ${(props) => props.$weight || 500};
-`;
-
-const Description = styled.p`
-  color: grey;
-  margin-bottom: 10px;
-
-  .highlight {
-    background-color: whitesmoke;
-    color: black;
-  }
-`;
-
-const ErrorText = styled.p`
-  color: red;
-  font-weight: 800;
-`
-
-const ImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-`;
-
-const FooterText = styled.p`
-  color: grey;
-`;
-
-const SocialButton = styled.a`
-  display: block;
-  align-items: center;
-  justify-content: center;
-  width: 40px; // Adjust size as needed
-  height: 40px;
-  border-radius: 50%;
-  margin: 10px; // Adjust space between button and text
-  transition: transform 0.3s;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  transition: color 0.3s ease;
 
   &:hover {
-    transform: scale(1.1); // Slight zoom effect on hover
+    color: cyan;
   }
 
-  // LinkedIn Icon Color
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+  }
+`;
+
+export const Title = styled.h1`
+  font-weight: bold;
+  font-size: 2.3em;
+  margin-bottom: 0.5em;
+`;
+
+export const Description = styled.p`
+  color: #cccccc;
+  margin-bottom: 1em;
+  line-height: 1.5;
+`;
+
+export const ErrorText = styled.p`
+  color: #ff4d4d;
+  font-weight: 700;
+`;
+
+export const FooterText = styled.p`
+  color: #666666;
+  margin-top: 2em;
+  font-size: 0.9em;
+`;
+
+export const SocialButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+  font-size: 1.4em;
+  background-color: #333333;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
   .linkedin-icon {
     color: #0077b5;
   }
 
-  // GitHub Icon Color
   .github-icon {
-    color: white;
-  }
-
-  // CV Icon Color
-  .cv-icon {
-    color: pink;
+    color: #ffffff;
   }
 `;
 
-const Projects = styled.div`
+export const Projects = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px;
@@ -151,56 +103,46 @@ const Projects = styled.div`
   }
 `;
 
-const ProjectItem = styled.div`
-  border: 2px solid #d8e4e9;
-  padding: 1.5em 1em;
-  border-radius: 1em;
+export const ProjectItem = styled.div`
+  border: 1px solid #666666;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  background-color: #2b2b2b;
 `;
 
-const ProjectDescription = styled.p`
-  color: grey;
-  font-weight: 900;
-  margin-bottom: 10px;
-
-  border: 2px solid cyan;
-  border-radius: 1em;
-  padding: 1em;
-`
-
-const ProjectLink = styled.a`
-  font-size: 1.2em;
-  color: #0070f3;
+export const ProjectLink = styled.a`
   text-decoration: none;
+  color: #00cfff;
+  font-size: 1.1em;
 `;
 
-const ProjectName = styled.h2`
-  color: white;
-  text-decoration: none;
+export const ProjectName = styled.h2`
+  color: #ffffff;
+  margin-bottom: 0.5em;
 `;
 
-const ProjectStats = styled.p`
-  color: white;
-  margin-top: 2em;
-  font-size: 0.8em;
-`
+export const ProjectDescription = styled.p`
+  color: #cccccc;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+`;
 
-export {
-  PageContainer,
-  TimeWrapper,
-  Navbar,
-  NavLink,
-  Title,
-  Highlight,
-  Description,
-  ErrorText,
-  ImageGrid,
-  Image,
-  FooterText,
-  SocialButton,
-  Projects,
-  ProjectDescription,
-  ProjectItem,
-  ProjectLink,
-  ProjectName,
-  ProjectStats
-};
+export const ProjectStats = styled.p`
+  color: #cccccc;
+  font-size: 0.9em;
+  line-height: 1.4em;
+`;
+
+export const ImagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 2em 0;
+`;
+
+export const RoundedImage = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 0.75em;
+  border: 1px solid #666666;
+`;

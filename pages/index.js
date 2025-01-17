@@ -1,52 +1,75 @@
+import React from "react";
 import {
-  PageContainer, TimeWrapper, Navbar, NavLink, 
-  Title, Highlight, Description, FooterText, SocialButton} 
-  from "../components";
-
-import React, {useState, useEffect} from "react"
-
+  PageContainer,
+  Navbar,
+  NavLink,
+  Title,
+  Description,
+  FooterText,
+  SocialButton,
+  ImagesContainer,
+  RoundedImage
+} from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub, faSquareLetterboxd } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const HomePage = () => {
   return (
     <PageContainer>
+      {/* Navigation */}
       <Navbar>
-        <NavLink href="#" $activeColor="red">home</NavLink>
+        <NavLink href="#" $activeColor="cyan">
+          home
+        </NavLink>
         <NavLink href="/work">work</NavLink>
         <NavLink href="/contact">contact</NavLink>
       </Navbar>
+
+      {/* Intro */}
       <Title>alfie phillips 👋</Title>
-      <h3><u>apprentice developer at hiyield</u>&nbsp;✳️</h3>
+      <h3>
+        <u style={{textUnderlineOffset: "4px"}}>apprentice developer at hiyield</u>
+      </h3>
       <Description>
-        As a <Highlight $bgcolor="green" $color="aqua" $weight="1000">well motivated</Highlight> and <Highlight $color="red" $weight="900">self-taught Software Engineer</Highlight> close to 4 years of experience, I specialize in
-        developing tailored solutions to meet diverse client needs. My expertise extends to <Highlight $bgcolor="yellow" $weight="700">Search Engine
-        Optimization (SEO) and brand promotion</Highlight>, where I have a proven track record of
-        enhancing brand visibility for small business startups. I thrive on <Highlight $bgcolor="red" $color="yellow" $weight="600">technical challenges</Highlight> and excel at&nbsp;
-        <Highlight $bgcolor="blue" $color="white" $weight="800">problem-solving</Highlight> to deliver effective solutions that align with clients&apos; objectives.
+        Hello! I'm a self-taught Software Engineer with 5 years of
+        experience, focusing on web development, SEO, and brand promotion. I
+        thrive on solving technical challenges and delivering impactful, modern
+        solutions for clients across various industries.
       </Description>
-      {/* <ImageGrid>
-        <Image src="/path-to-your-image.jpg" alt="Image Description" />
-        <Image src="/path-to-your-image.jpg" alt="Image Description" />
-        <Image src="/path-to-your-image.jpg" alt="Image Description" />
-        <Image src="/path-to-your-image.jpg" alt="Image Description" />
-        <Image src="/path-to-your-image.jpg" alt="Image Description" />
-        <Image src="/path-to-your-image.jpg" alt="Image Description" />
-      </ImageGrid> */}
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <SocialButton href="https://www.linkedin.com/in/alfiephillips/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" size="2x"/>
+
+      {/* Rounded images container */}
+      <ImagesContainer>
+        <RoundedImage
+          src="https://hiyield.co.uk/wp-content/uploads/2024/09/alfie-fun-1024x1024.png"
+          alt="Placeholder for Project 1"
+        />
+      </ImagesContainer>
+
+      {/* Social */}
+      <div style={{ display: "flex", alignItems: "center", marginTop: "2em" }}>
+        <SocialButton
+          href="https://www.linkedin.com/in/alfiephillips/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" size="2x" />
         </SocialButton>
-        <span style={{fontSize: "1.5em"}}>linkedIn</span>
+        <span style={{ fontSize: "1.3em", marginLeft: "0.5em" }}>LinkedIn</span>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <SocialButton href="https://github.com/alfiephillips" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} className="github-icon" size="2x"/>
+        <SocialButton
+          href="https://github.com/alfiephillips"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithub} className="github-icon" size="2x" />
         </SocialButton>
-        <span style={{fontSize: "1.5em"}}>github</span>
+        <span style={{ fontSize: "1.3em", marginLeft: "0.5em" }}>GitHub</span>
       </div>
-      <FooterText>
-        © copyright alfie phillips {new Date().getFullYear()}
+
+      {/* Footer */}
+      <FooterText style={{ marginTop: "3em" }}>
+        © {new Date().getFullYear()} alfie phillips
       </FooterText>
     </PageContainer>
   );
