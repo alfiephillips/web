@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import gsap from "gsap";
 import {
   BoltWrapper,
@@ -14,14 +15,38 @@ import {
 } from "../../components";
 
 const Bolt = () => {
+  const router = useRouter();
   const scrollTextRef = useRef(null);
+  const [isVerified, setIsVerified] = useState(false);
 
   useEffect(() => {
-    const tlFadeOut = gsap.timeline({ paused: true }).to(scrollTextRef.current, {
-      opacity: 0,
-      duration: 0.5,
-      ease: "power1.out"
-    });
+    // Check local storage once on mount
+    const alreadyAuthed = localStorage.getItem("googleAuth");
+    if (alreadyAuthed) {
+      setIsVerified(true);
+    } else {
+      // Prompt for credentials
+      const pass = prompt("Enter Google password");
+      if (pass === "bolt180806") {
+        localStorage.setItem("googleAuth", "true");
+        setIsVerified(true);
+      } else {
+        alert("Incorrect credentials. Access denied.");
+      }
+    }
+  }, [router]);
+
+  useEffect(() => {
+    if (!isVerified) return;
+
+    // Fade out effect for the "Scroll Down..." text
+    const tlFadeOut = gsap
+      .timeline({ paused: true })
+      .to(scrollTextRef.current, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power1.out"
+      });
 
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -33,7 +58,12 @@ const Bolt = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isVerified]);
+
+  // If not verified, render nothing
+  if (!isVerified) {
+    return null;
+  }
 
   return (
     <BoltWrapper>
