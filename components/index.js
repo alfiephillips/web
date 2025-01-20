@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const BoltWrapper = styled.div`
   font-family: "Roboto", sans-serif;
