@@ -43,6 +43,10 @@ const HomePage = () => {
           src="https://hiyield.co.uk/wp-content/uploads/2024/09/alfie-fun-1024x1024.png"
           alt="Placeholder for Project 1"
         />
+        <RoundedImage
+          src="https://hiyield.co.uk/wp-content/uploads/2024/09/alfie-fun-1024x1024.png"
+          alt="Placeholder for Project 1"
+        />
       </ImagesContainer>
 
       {/* Social */}

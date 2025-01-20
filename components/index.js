@@ -1,29 +1,47 @@
 import styled, { keyframes } from "styled-components";
 
-const glitch = keyframes`
-  0% { text-shadow: 2px 0 #ff4d4d, -2px 0 #4d94ff; }
-  20% { text-shadow: -2px 0 #4d94ff, 2px 0 #ff4d4d; }
-  40% { text-shadow: 2px 0 #ff4d4d, -2px 0 #4d94ff; }
-  60% { text-shadow: -2px 0 #4d94ff, 2px 0 #ff4d4d; }
-  80% { text-shadow: 2px 0 #ff4d4d, -2px 0 #4d94ff; }
-  100% { text-shadow: -2px 0 #4d94ff, 2px 0 #ff4d4d; }
+export const BoltWrapper = styled.div`
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  max-width: 100vw;
+  height: 100vh;
+  position: relative;
+  color: #f0f0f0;
+  z-index: 0;
 `;
 
+// Hero container (no absolute positioning)
+export const BoltLandingPageContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: url("/bolt.svg") no-repeat center center;
+  background-size: cover;
+
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
+`;
+
+// Page content container (no background image)
 export const PageContainer = styled.div`
-  background-color: #1a1a1a;
+  background-color: #000;
   color: #f0f0f0;
   min-height: 100vh;
-  padding: 30px 25%;
+  padding: 30px 10%;
+  position: relative;
+  z-index: 50;
 
   @media (max-width: 768px) {
     padding: 30px 10%;
   }
 `;
 
+
 export const Navbar = styled.nav`
   display: flex;
+  position: relative;
   gap: 20px;
-  margin-bottom: 10px;
+  z-index: 50;
 
   @media (max-width: 768px) {
     gap: 10px;
@@ -37,7 +55,7 @@ export const NavLink = styled.a`
   transition: color 0.3s ease;
 
   &:hover {
-    color: cyan;
+    color: lightgray;
   }
 
   @media (max-width: 768px) {
@@ -47,14 +65,16 @@ export const NavLink = styled.a`
 
 export const Title = styled.h1`
   font-weight: bold;
-  font-size: 2.3em;
+  font-size: 3em;
   margin-bottom: 0.5em;
 `;
 
 export const Description = styled.p`
   color: #cccccc;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   line-height: 1.5;
+  font-size: 1em;
+  max-width: 37.5rem;
 `;
 
 export const ErrorText = styled.p`
@@ -135,14 +155,21 @@ export const ProjectStats = styled.p`
 
 export const ImagesContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin: 2em 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @media (min-width: 1200px) {
+    justify-content: center;
+  }
 `;
 
 export const RoundedImage = styled.img`
-  width: 100%;
+  max-width: 50%;
   height: auto;
   border-radius: 0.75em;
-  border: 1px solid #666666;
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
 `;
