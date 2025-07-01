@@ -72,7 +72,7 @@ function Maintenance() {
             d="M12 6v6l4 2"
           />
         </Icon>
-        <Title>I'll be back soon!</Title>
+        <Title>I&#39;ll be back soon!</Title>
         <Message>
           Sorry for the inconvenience. I'm performing some maintenance at the moment.
         </Message>
