@@ -72,16 +72,16 @@ function Maintenance() {
             d="M12 6v6l4 2"
           />
         </Icon>
-        <Title>I&#39;ll be back soon!</Title>
+        <Title>I&apos;ll be back soon!</Title>
         <Message>
-          Sorry for the inconvenience. I'm performing some maintenance at the moment.
+          Sorry for the inconvenience. I&apos;m performing some maintenance at the moment.
         </Message>
         <SubMessage>
           If you need to, you can always{" "}
           <ContactLink href="mailto:mail@alfiephillips.com">
             contact me
           </ContactLink>
-          , otherwise I'll be back online shortly!
+          , otherwise I&apos;ll be back online shortly!
         </SubMessage>
       </Card>
     </Container>
