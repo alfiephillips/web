@@ -100,7 +100,7 @@ function HappyBirthdayJustin() {
       <Card>
         <Title>🎉 Happy Birthday Justin! 🎈</Title>
         <Message>
-          Wishing you a fantastic day void of Xigxag!
+          Wishing you a fantastic day void of xigxag!
         </Message>
       </Card>
     </Container>
